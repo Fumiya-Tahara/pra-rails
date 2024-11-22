@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "articles#index"
+  root "home#top"
+  get "about", to: "home#about"
+
 
   resources :articles do
     resources :comments
