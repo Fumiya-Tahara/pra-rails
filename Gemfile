@@ -70,3 +70,12 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+
+group :development, :test do
+  gem 'brakeman'
+  gem 'bundler-audit'
+  gem 'pg'
+  gem 'rubocop-rails'
+  gem 'rubocop'
+end
