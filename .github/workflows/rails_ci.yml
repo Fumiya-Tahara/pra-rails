@@ -47,7 +47,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install Ruby and gems
-        uses: ruby/setup-ruby@78c01b705fd9d5ad960d432d3a0cfa341d50e410 # v1.179.1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.3.2
           bundler-cache: true
@@ -56,6 +56,8 @@ jobs:
       # Add or replace any other lints here
       - name: Security audit dependencies
         run: bundle exec bundle audit --update
+      - name: Check gem version
+        run: gem list brakeman
       - name: Security audit application code
         run: bundle exec brakeman -q -w2
       - name: Lint Ruby files
