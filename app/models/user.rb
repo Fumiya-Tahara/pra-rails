@@ -1,3 +1,5 @@
 class User < ApplicationRecord
-  encrypts :password
+  has_many :posts
+
+  has_secure_password
 end
