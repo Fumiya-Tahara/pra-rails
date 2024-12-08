@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
     def basic_auth
       authenticate_or_request_with_http_basic("Application") do |user_name, password|
-        user = User.find_by(username: user_name)
+        user = User.find_by(user_name: user_name)
         user&.authenticate(password)
       end
     end
