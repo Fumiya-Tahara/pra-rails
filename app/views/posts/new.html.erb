@@ -1,1 +1,12 @@
-<h1>Newページ</h1>
+<h1>Post作成ページ</h1>
+
+<h2>Add a new post:</h2>
+<%= form_with model: @post do |form| %>
+  <p>
+    <%= form.label :content %><br>
+    <%= form.text_field :content %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

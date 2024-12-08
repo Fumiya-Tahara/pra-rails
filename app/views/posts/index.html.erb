@@ -1,1 +1,9 @@
-<h1>Postsページ</h1>
+<h1 class="text-6xl">Posts一覧ページ</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= post.content %>
+    </li>
+  <% end %>
+</ul>
