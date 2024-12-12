@@ -25,7 +25,14 @@
 
   <body>
     <main>
-      <%= yield %>
+      <div class="grid grid-cols-5">
+        <div class="col-span-1">
+          <%= render "layouts/sidebar" %>
+        </div>
+        <div class="col-span-4">
+          <%= yield %>
+        </div>
+      </div>
     </main>
   </body>
 </html>
