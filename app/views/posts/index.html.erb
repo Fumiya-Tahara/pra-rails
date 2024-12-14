@@ -1,9 +1,21 @@
-<h1 class="text-6xl">Posts一覧ページ</h1>
-
-<ul>
+<div>
   <% @posts.each do |post| %>
-    <li>
-      <%= post.content %>
-    </li>
+  <div class="border border-slate-100 -m-px">
+    <article class="px-2">
+      <div>
+        <div>
+          <%# tag for icon %>
+        </div>
+        <div class="pb-3">
+          <div class="font-bold text-sm ">
+            <%= post.user.user_name %>
+          </div>
+          <div>
+            <%= post.content %>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
   <% end %>
-</ul>
+</div>
