@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_03_121427) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_16_021230) do
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.integer "user_id", null: false
@@ -20,10 +20,12 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_03_121427) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "user_name"
-    t.string "password_digest"
+    t.string "user_name", null: false
+    t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
+    t.index ["user_name"], name: "index_users_on_user_name", unique: true
   end
 
   add_foreign_key "posts", "users"
