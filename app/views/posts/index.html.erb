@@ -11,15 +11,26 @@
                 <%= image_tag("user-images/initial_icon.png", size: "40x40", class: "rounded-full") %>
               <% end %>
             </div>
-            <div class="flex flex-col">
+            <div class="w-full flex flex-col">
               <div class="font-bold text-sm ">
                 <%= post.user.user_name %>
               </div>
               <div>
                 <%= post.content %>
               </div>
-              <div class="flex">
-                
+              <div class="w-3/4 mt-3 flex justify-between">
+                <div class="flex">
+                  <%= image_tag("icons/reply_icon.svg", width: "18.75px", height: "18.75px") %>
+                  <div class="px-1 text-sm">1</div>
+                </div>
+                <div class="flex">
+                  <%= image_tag("icons/repost_icon.svg", width: "18.75px", height: "18.75px") %>
+                  <div class="px-1 text-sm">1</div>
+                </div>
+                <div class="flex">
+                  <%= image_tag("icons/favorite_icon.svg", width: "18.75px", height: "18.75px") %>
+                  <div class="px-1 text-sm">1</div>
+                </div>
               </div>
             </div>
           </div>
