@@ -32,9 +32,15 @@
         </ul>
       </div>
       <div class="my-2">
-        <a class="min-h-12 flex justify-center items-center px-8 w-full text-white rounded-full bg-black">
-          <span class="text-lg font-bold">Post</span>  
-        </a>
+        <div data-controller="modal">
+          <dialog data-modal-target="dialog" class="p-8 rounded-lg backdrop:bg-black/80">
+            <p>This modal dialog has a groovy backdrop!</p>
+            <button autofocus data-action="modal#close" class="px-2.5 py-1 bg-blue-500 text-white text-sm rounded">Close</button>
+          </dialog>
+          <button data-action="modal#open" class="min-h-12 flex justify-center items-center px-8 w-full text-white rounded-full bg-black">
+            <span class="text-lg font-bold">Post</span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
