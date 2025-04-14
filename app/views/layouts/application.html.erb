@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title><%= content_for(:title) || "Pra Rails" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -21,21 +22,22 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
+</head>
 
-  <body>
+<body>
     <main>
-      <div class="grid grid-cols-12">
-        <div class="col-span-3">
-          <%= render "layouts/left_sidebar" %>
+        <div class="h-screen grid grid-cols-12">
+            <div class="col-span-3">
+                <%= render "layouts/left_sidebar" %>
+            </div>
+            <div class="col-span-5 overflow-y-auto">
+                <%= yield %>
+            </div>
+            <div class="col-span-4">
+                <%= render "layouts/right_sidebar" %>
+            </div>
         </div>
-        <div class="col-span-5">
-          <%= yield %>
-        </div>
-        <div class="col-span-4">
-          <%= render "layouts/right_sidebar" %>
-        </div>
-      </div>
     </main>
-  </body>
+</body>
+
 </html>
